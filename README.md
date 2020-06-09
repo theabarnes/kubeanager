@@ -11,6 +11,7 @@ Kubeanager is for a central view of your managed Kubernetes clusters. Kubeanager
 
 # Assumptions
 
+* You have your aws credentials configured.
 * You have Python3 installed.
 * You have a MySQL server or RDS running.
 * You have created a database for use with the application.
