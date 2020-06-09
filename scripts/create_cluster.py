@@ -110,3 +110,7 @@ f.close()
 
 print("Cluster Created")
 #time.sleep(300.9)
+
+#validateCluster=subprocess.Popen(["/usr/local/bin/kops", "kops validate cluster"], stout=ssubprocess.PIPE)
+#VALIDATECLUSTER=validateCluster.stdout.read().strip()
+#print(VALIDATECLUSTER_=)
