@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+{% load staticfiles %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Kubeanager</title>
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static '/assets/dist/css/bootstrap.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{% static '/assets/starter-template.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="{% url 'home' %}">Kubeanager</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'checkBucket' %}">Check Bucket</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'createCluster' %}">Create Cluster<span class="sr-only">(current)</span></a>
+      </li>
+      <!--<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>-->
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Text Here" aria-label="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<main role="main" class="container">
+
+  <div class="starter-template">
+    <h1>Kubeanager</h1>
+    <p class="lead">This page is here in order to guide you through the creation of a Kubernetes cluster.</p>
+  </div>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<form action="/creating_cluster/" target="resultsIframe" method="post">
+    {% csrf_token %}
+  <div class="form-group row">
+    <label for="bucketname" class="col-4 col-form-label">Bucket Name</label>
+    <div class="col-8">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">s3://</div>
+        </div>
+        <input id="bucket_name" name="bucket_name" placeholder="bucket" type="text" aria-describedby="bucketnameHelpBlock" required="required" class="form-control">
+      </div>
+      <span id="bucketnameHelpBlock" class="form-text text-muted">Type in your desired s3 bucket here.</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="clustername" class="col-4 col-form-label">Cluster Name</label>
+    <div class="col-8">
+      <input id="cluster_name" name="cluster_name" placeholder="example.myku.be" type="text" aria-describedby="clusternameHelpBlock" required="required" class="form-control">
+      <span id="clusternameHelpBlock" class="form-text text-muted">Provide your desired cluster name/FQDN.</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="dnszone" class="col-4 col-form-label">Hosted Zone</label>
+    <div class="col-8">
+      <input id="dnszone" name="dnszone" placeholder="myku.be" type="text" aria-describedby="dnszoneHelpBlock" class="form-control">
+      <span id="dnszoneHelpBlock" class="form-text text-muted">Provide your route53 hosted zone that you will use with this cluster.</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="profile" class="col-4 col-form-label">Profile</label>
+    <div class="col-8">
+      <select id="profile" name="profile" required="required" class="custom-select">
+        <option value="default">Default</option>
+		<span id="profileHelpBlock" class="form-text text-muted">AWS Profile to use to spin up cluster.</span>
+      </select>
+    </div>
+  <div>
+  </div>
+  </div>
+  <div class="form-group row">
+    <label for="dnszone" class="col-4 col-form-label">Date</label>
+    <div class="col-8">
+      <input id="today" type="date" name="date">
+      <span id="todayeHelpBlock" class="form-text text-muted">Today's date.</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="offset-4 col-8">
+      <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+  <!--{{data_create_cluster}}<br><br>
+  {{data2}}-->
+  <p align="center"><iframe src="" name="resultsIframe" height="315" width="560" allowfullscreen="" frameborder="0" style="border:0; border:none"></iframe></p>
+</form>
+</main><!-- /.container -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<!--
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../static/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../static/assets/dist/js/bootstrap.bundle.js"></script></body>
+<script src="http://opal.g2anime.net/static/date.js"></script>-->
+</html>
