@@ -16,6 +16,6 @@ Kubeanager is for a central view of your managed Kubernetes clusters. Kubeanager
 * You have a MySQL server or RDS running.
 * You have created a database for use with the application.
 
-# Future Featuures
+# Future Features
 
 * Ability to manage domains and certs.
