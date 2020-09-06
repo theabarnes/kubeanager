@@ -1,0 +1,7 @@
+KubernetesAdmin role exist, creation will be skipped. 
+ 
+{'Location': '/testingabarnes', 'ResponseMetadata': {'HostId': 'tGYtp11FvEtH9WDZeZWNdsnqbYJZUu8reGvlKqQTRQUsBvRMQ8WP6uTYmSp0DChZ+D7IZiGS5iE=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'date': 'Sun, 12 Jul 2020 19:50:59 GMT', 'location': '/testingabarnes', 'x-amz-request-id': 'A7F0D704E61B455C', 'content-length': '0', 'server': 'AmazonS3', 'x-amz-id-2': 'tGYtp11FvEtH9WDZeZWNdsnqbYJZUu8reGvlKqQTRQUsBvRMQ8WP6uTYmSp0DChZ+D7IZiGS5iE='}, 'RequestId': 'A7F0D704E61B455C', 'RetryAttempts': 0}}
+True
+True
+True
+True

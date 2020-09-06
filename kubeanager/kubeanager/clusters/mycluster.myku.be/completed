@@ -1,0 +1,14 @@
+KubernetesAdmin role exist, creation will be skipped. 
+ 
+{'Location': '/testingabarnes2020', 'ResponseMetadata': {'RequestId': 'AQ9HCYCPBQDR4J1Y', 'HostId': 'BQfOIM9EckBUisNywIr+R+fIJxZqo6jiT9RA5X5g+chCFp6wAx/FQCXzGrlDJw7AtVxUMSj2E7A=', 'HTTPHeaders': {'x-amz-id-2': 'BQfOIM9EckBUisNywIr+R+fIJxZqo6jiT9RA5X5g+chCFp6wAx/FQCXzGrlDJw7AtVxUMSj2E7A=', 'x-amz-request-id': 'AQ9HCYCPBQDR4J1Y', 'server': 'AmazonS3', 'content-length': '0', 'date': 'Sun, 12 Jul 2020 19:31:58 GMT', 'location': '/testingabarnes2020'}, 'HTTPStatusCode': 200, 'RetryAttempts': 0}}
+True
+True
+True
+True
+KubernetesAdmin role exist, creation will be skipped. 
+ 
+{'ResponseMetadata': {'RetryAttempts': 0, 'RequestId': 'D4D8F5F25F04280F', 'HTTPStatusCode': 200, 'HTTPHeaders': {'content-length': '0', 'x-amz-id-2': 'vWFIjficK8uuSu1etlJPXDzswNTsocnzolXr2q0ClqG0eUCT4Teen64gYHGpcuTlRpQaGGZeYJI=', 'date': 'Sun, 12 Jul 2020 23:22:20 GMT', 'location': '/testingabarnes2020', 'x-amz-request-id': 'D4D8F5F25F04280F', 'server': 'AmazonS3'}, 'HostId': 'vWFIjficK8uuSu1etlJPXDzswNTsocnzolXr2q0ClqG0eUCT4Teen64gYHGpcuTlRpQaGGZeYJI='}, 'Location': '/testingabarnes2020'}
+True
+True
+True
+True

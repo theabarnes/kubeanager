@@ -27,4 +27,3 @@ def check_role(role):
             return True
 
 check_role(role_name)
-#print(response)

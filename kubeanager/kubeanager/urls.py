@@ -17,16 +17,19 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 from django.conf import settings
-from kubeanager.views import HomeView
+#from kubeanager.views import HomeView
 from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    url(r'^$', HomeView.as_view(), name="home"),
+    path('adminpanel/', admin.site.urls),
+    path('manage/<int:clusterdata_id>/', views.manage_cluster, name="manageCluster"),
+    url(r'^$', views.cluster_view, name="home"),
+    #url(r'^$', HomeView.as_view(), name="home"),
     url(r'^create_cluster', views.create_cluster_home, name="createCluster"),
-    url(r'^check_bucket', views.check_bucket, name="checkBucket"),
-    url(r'^checked_bucket', views.checked_bucket),
+    url(r'^check_bucket', views.check_bucket_home, name="checkBucket"),
+    url(r'^checked_bucket', views.check_bucket),
     url(r'^creating_cluster', views.create_cluster),
-    url(r'^testing', views.testing),
+    url(r'^delete_cluster', views.delete_cluster_home, name="delCluster"),
+    url(r'^del_cluster', views.delete_cluster),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
